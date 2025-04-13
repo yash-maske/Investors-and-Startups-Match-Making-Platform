@@ -1,0 +1,145 @@
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<head>-->
+<!--    <title>Create Pitch Event</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--    <h1>Create Pitch Event</h1>-->
+<!--    <form method="POST">-->
+<!--        {% csrf_token %}-->
+<!--        {{ form.as_p }}-->
+<!--        <button type="submit">Create Event</button>-->
+<!--    </form>-->
+<!--</body>-->
+<!--</html>-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Pitch Event</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(to right, #e0f7fa, #f1f8ff);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            background-color: #fff;
+            width: 100%;
+            max-width: 480px;
+            padding: 2rem;
+            border-radius: 1.25rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            animation: slideFadeIn 0.5s ease;
+        }
+
+        @keyframes slideFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 1.2rem;
+            color: #222;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.4em;
+            font-size: 0.95rem;
+            color: #333;
+        }
+
+        input[type="email"]{
+            width: 100%;
+            padding: 0.9em;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 0.6em;
+            margin-bottom: 1.2em;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        input[type="text"],
+        textarea,
+        input[type="datetime-local"] {
+            width: 100%;
+            padding: 0.9em;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 0.6em;
+            margin-bottom: 1.2em;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        input:focus,
+        textarea:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 6px rgba(0, 123, 255, 0.3);
+            outline: none;
+        }
+
+        .errorlist {
+            color: #c62828;
+            margin: 0.3em 0 1em;
+            font-size: 0.9em;
+            list-style: none;
+            padding-left: 0;
+        }
+
+        button {
+            width: 100%;
+            padding: 0.9em;
+            font-size: 1rem;
+            font-weight: 600;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 0.6em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                margin: 1rem;
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Create Pitch Event</h1>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Create Event</button>
+        </form>
+    </div>
+</body>
+</html>

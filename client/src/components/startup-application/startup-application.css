@@ -1,0 +1,277 @@
+/* startup-application.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .startup-applications {
+    max-width: 1280px;
+    margin: 50px auto;
+    padding: 30px;
+    background: linear-gradient(145deg, #ffffff 0%, #f0f4f8 100%);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Main Heading */
+  .startup-applications h1 {
+    font-size: 2.8rem;
+    color: #121212;
+    text-align: center;
+    margin-bottom: 50px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    position: relative;
+    text-transform: uppercase;
+  }
+  
+  .startup-applications h1::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 120px;
+    background: radial-gradient(circle, rgba(0, 123, 255, 0.1) 0%, transparent 70%);
+    z-index: -1;
+  }
+  
+  /* Section Headings */
+  .startup-applications h2 {
+    font-size: 1.9rem;
+    color: #1a1a1a;
+    margin: 40px 0 20px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-left: 4px solid #007bff;
+    padding-left: 15px;
+  }
+  
+  /* Loading and Error States */
+  .startup-applications p {
+    font-size: 1.2rem;
+    color: #555;
+    text-align: center;
+    padding: 25px;
+    background: #f8fafc;
+    border-radius: 10px;
+    margin: 20px 0;
+    transition: all 0.3s ease;
+  }
+  
+  .startup-applications p.error {
+    background: #fff1f0;
+    color: #b71c1c;
+    border: 1px solid #ef5350;
+    font-weight: 500;
+  }
+  
+  /* Loading Animation */
+  .startup-applications p:empty::after {
+    content: 'Loading...';
+    animation: fade 1.8s infinite;
+  }
+  
+  @keyframes fade {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+  
+  /* Investor Lists */
+  .startup-applications ul {
+    list-style: none;
+    display: grid;
+    gap: 20px;
+    padding: 0;
+  }
+  
+  .startup-applications li {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+    font-size: 1.1rem;
+    color: #222;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: nowrap;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s;
+  }
+  
+  .startup-applications li:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+  }
+  
+  /* Style for the email/Anonymous text */
+  .startup-applications li span {
+    flex: 1;
+    font-weight: 500;
+    min-width: 0; /* Prevents overflow */
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  /* Status Badges */
+  .startup-applications li::after {
+    content: attr(data-status);
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: 6px 12px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    flex: 0 0 auto;
+    white-space: nowrap;
+  }
+  
+  .startup-applications li[data-status='approved']::after {
+    background: #e8f5e9;
+    color: #2e7d32;
+  }
+  
+  .startup-applications li[data-status='rejected']::after {
+    background: #ffebee;
+    color: #c62828;
+  }
+  
+  .startup-applications li[data-status='pending']::after {
+    background: #fff3e0;
+    color: #ef6c00;
+  }
+  
+  /* Status Glow Effect */
+  .startup-applications li[data-status='approved']::before,
+  .startup-applications li[data-status='rejected']::before,
+  .startup-applications li[data-status='pending']::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 6px;
+    height: 100%;
+    transition: opacity 0.3s;
+  }
+  
+  .startup-applications li[data-status='approved']::before {
+    background: #4caf50;
+  }
+  
+  .startup-applications li[data-status='rejected']::before {
+    background: #ef5350;
+  }
+  
+  .startup-applications li[data-status='pending']::before {
+    background: #ff9800;
+  }
+  
+  /* Schedule Button */
+  .startup-applications .schedule-btn {
+    background: #007bff;
+    color: #ffffff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    flex: 0 0 auto;
+    white-space: nowrap;
+  }
+  
+  .startup-applications .schedule-btn:hover {
+    background: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+  }
+  
+  .startup-applications .schedule-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 6px rgba(0, 123, 255, 0.2);
+  }
+  
+  .startup-applications .schedule-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+  }
+  
+  /* Approved Investor Layout */
+  .startup-applications li[data-status='approved'] {
+    gap: 10px; /* Slightly tighter for approved to fit badge, email, button */
+  }
+  
+  /* Grid Layout */
+  @media (min-width: 768px) {
+    .startup-applications ul {
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 600px) {
+    .startup-applications {
+      margin: 20px;
+      padding: 20px;
+      border-radius: 12px;
+    }
+  
+    .startup-applications h1 {
+      font-size: 2rem;
+    }
+  
+    .startup-applications h2 {
+      font-size: 1.5rem;
+      margin: 30px 0 15px;
+    }
+  
+    .startup-applications li {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 10px;
+      padding: 15px;
+    }
+  
+    .startup-applications li span {
+      flex: none;
+      text-align: left;
+    }
+  
+    .startup-applications li::after {
+      align-self: flex-start;
+    }
+  
+    .startup-applications .schedule-btn {
+      width: 100%;
+      padding: 10px;
+      border-radius: 10px;
+      text-align: center;
+    }
+  }
+  
+  /* Subtle Background Animation */
+  .startup-applications::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 10% 20%, rgba(0, 123, 255, 0.05) 0%, transparent 50%);
+    z-index: -1;
+    animation: moveGradient 15s ease infinite;
+  }
+  
+  @keyframes moveGradient {
+    0% { transform: translate(0, 0); }
+    50% { transform: translate(20px, 20px); }
+    100% { transform: translate(0, 0); }
+  }

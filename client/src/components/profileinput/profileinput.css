@@ -1,0 +1,493 @@
+/* Container styling */
+.profile-input-container {
+    max-width: 700px; /* Slightly wider for better form layout */
+    margin: 3rem auto; /* Increased margin for breathing room */
+    padding: 2.5rem; /* More padding for a spacious feel */
+    background: #ffffff;
+    border-radius: 1.25rem; /* Softer corners */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08); /* Deeper shadow for elevation */
+    border: 1px solid #f1f5f9; /* Subtle border for definition */
+  }
+  
+  /* Title styling */
+  .profile-input-title {
+    font-size: 2rem; /* Larger for prominence */
+    font-weight: 700;
+    color: #1e293b;
+    text-align: center;
+    margin-bottom: 2.5rem; /* More space below */
+    letter-spacing: -0.025em; /* Tighter spacing for polish */
+    position: relative;
+  }
+  
+  .profile-input-title::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: #22c55e; /* Green underline */
+    margin: 0.5rem auto 0;
+    border-radius: 1.5px;
+  }
+  
+  /* Form styling */
+  .profile-input-form {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column by default */
+    gap: 1.75rem; /* Increased gap for clarity */
+  }
+  
+  /* Form group styling */
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem; /* More space between label and input */
+    position: relative; /* For potential animations */
+  }
+  
+  .form-group label {
+    font-size: 1.1rem; /* Slightly larger for readability */
+    font-weight: 600;
+    color: #1e293b;
+    transition: color 0.3s ease;
+  }
+  
+  .form-group label:hover {
+    color: #22c55e; /* Green on hover for interactivity */
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    padding: 0.875rem 1rem; /* More padding for comfort */
+    font-size: 1rem;
+    border: 1px solid #e5e7eb; /* Slightly darker border */
+    border-radius: 0.75rem; /* Softer corners */
+    background: #fafafa; /* Lighter background */
+    color: #1e293b;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05); /* Subtle inner shadow */
+  }
+  
+  .form-group input:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: #22c55e;
+    box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.25), inset 0 1px 3px rgba(0, 0, 0, 0.05);
+    background: #ffffff; /* Brighten on focus */
+  }
+  
+  .form-group textarea {
+    min-height: 120px; /* Slightly taller */
+    resize: vertical;
+  }
+  
+  /* File input styling */
+  .form-group input[type="file"] {
+    padding: 0.75rem 1rem;
+    border: 1px dashed #e5e7eb; /* Dashed border for file inputs */
+    border-radius: 0.75rem;
+    background: #fafafa;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+  }
+  
+  .form-group input[type="file"]:hover {
+    border-color: #22c55e;
+  }
+  
+  /* File input custom styling */
+  .form-group input[type="file"]::-webkit-file-upload-button {
+    padding: 0.5rem 1rem;
+    background: #22c55e;
+    color: #ffffff;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.3s ease;
+  }
+  
+  .form-group input[type="file"]::-webkit-file-upload-button:hover {
+    background: #16a34a;
+  }
+  
+  /* Submit button styling */
+  .profile-submit-btn {
+    padding: 1rem 2rem; /* Larger for prominence */
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #ffffff;
+    background: #22c55e;
+    border: none;
+    border-radius: 0.75rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3); /* Green shadow */
+    align-self: center; /* Center the button */
+  }
+  
+  .profile-submit-btn:hover {
+    background: #16a34a;
+    transform: translateY(-3px); /* Stronger lift effect */
+    box-shadow: 0 6px 16px rgba(34, 197, 94, 0.4);
+  }
+  
+  .profile-submit-btn:active {
+    transform: translateY(0); /* Reset on click */
+    box-shadow: 0 2px 8px rgba(34, 197, 94, 0.2);
+  }
+  
+  /* Responsive adjustments */
+  @media (min-width: 768px) {
+    .profile-input-form {
+      grid-template-columns: 1fr 1fr; /* Two columns on larger screens */
+      gap: 2rem; /* Increased gap */
+    }
+  
+    /* Ensure some fields span full width */
+    .form-group:nth-child(6), /* Address */
+    .form-group:nth-child(9), /* Aadhar Card Photo */
+    .form-group:nth-child(10), /* PAN Card Photo */
+    .profile-submit-btn {
+      grid-column: span 2; /* Span both columns */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .profile-input-container {
+      margin: 1.5rem;
+      padding: 2rem;
+    }
+  
+    .profile-input-title {
+      font-size: 1.75rem;
+    }
+  
+    .profile-input-form {
+      gap: 1.25rem;
+    }
+  
+    .form-group input,
+    .form-group textarea {
+      font-size: 0.95rem;
+      padding: 0.75rem;
+    }
+  
+    .form-group input[type="file"] {
+      padding: 0.5rem;
+    }
+  
+    .profile-submit-btn {
+      padding: 0.875rem 1.5rem;
+      font-size: 1rem;
+    }
+  }
+
+  /* Existing Form Styling */
+.profile-input-container {
+  max-width: 700px;
+  margin: 3rem auto;
+  padding: 2.5rem;
+  background: #ffffff;
+  border-radius: 1.25rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid #f1f5f9;
+}
+
+.profile-input-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1e293b;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  letter-spacing: -0.025em;
+}
+
+.profile-input-title::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: #22c55e;
+  margin: 0.5rem auto 0;
+  border-radius: 1.5px;
+}
+
+.profile-input-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.75rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  position: relative;
+}
+
+.form-group label {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1e293b;
+  transition: color 0.3s ease;
+}
+
+.form-group label:hover {
+  color: #22c55e;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 0.875rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  background: #fafafa;
+  color: #1e293b;
+  transition: all 0.3s ease;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #22c55e;
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.25), inset 0 1px 3px rgba(0, 0, 0, 0.05);
+  background: #ffffff;
+}
+
+.form-group textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.form-group input[type="file"] {
+  padding: 0.75rem 1rem;
+  border: 1px dashed #e5e7eb;
+  border-radius: 0.75rem;
+  background: #fafafa;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input[type="file"]:hover {
+  border-color: #22c55e;
+}
+
+.form-group input[type="file"]::-webkit-file-upload-button {
+  padding: 0.5rem 1rem;
+  background: #22c55e;
+  color: #ffffff;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.form-group input[type="file"]::-webkit-file-upload-button:hover {
+  background: #16a34a;
+}
+
+.profile-submit-btn {
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: #22c55e;
+  border: none;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
+  align-self: center;
+}
+
+.profile-submit-btn:hover {
+  background: #16a34a;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(34, 197, 94, 0.4);
+}
+
+.profile-submit-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(34, 197, 94, 0.2);
+}
+
+.profile-success {
+  color: #2e7d32;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.profile-error {
+  color: #d32f2f;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.spinner {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #22c55e;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 1s linear infinite;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@media (min-width: 768px) {
+  .profile-input-form {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .form-group:nth-child(6),
+  .form-group:nth-child(9),
+  .form-group:nth-child(10),
+  .profile-submit-btn {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-input-container {
+    margin: 1.5rem;
+    padding: 2rem;
+  }
+
+  .profile-input-title {
+    font-size: 1.75rem;
+  }
+
+  .profile-input-form {
+    gap: 1.25rem;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    font-size: 0.95rem;
+    padding: 0.75rem;
+  }
+
+  .form-group input[type="file"] {
+    padding: 0.5rem;
+  }
+
+  .profile-submit-btn {
+    padding: 0.875rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+/* Full-Page Loading Overlay */
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.9), rgba(16, 185, 129, 0.9));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.loading-content {
+  text-align: center;
+  color: #ffffff;
+}
+
+.pulse-loader {
+  width: 80px;
+  height: 80px;
+  background: radial-gradient(circle, #ffffff 10%, transparent 11%);
+  background-size: 8px 8px;
+  border-radius: 50%;
+  position: relative;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.pulse-loader::before,
+.pulse-loader::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  animation: scale 1.5s ease-in-out infinite;
+}
+
+.pulse-loader::before {
+  animation-delay: 0.2s;
+}
+
+.pulse-loader::after {
+  animation-delay: 0.4s;
+}
+
+.loading-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 1.5rem 0 0.5rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.loading-message {
+  font-size: 1.2rem;
+  font-weight: 400;
+  max-width: 400px;
+  line-height: 1.5;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  }
+  50% {
+    transform: scale(1.2);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  }
+}
+
+@keyframes scale {
+  0% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

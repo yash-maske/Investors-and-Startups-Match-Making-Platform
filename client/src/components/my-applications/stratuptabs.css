@@ -1,0 +1,188 @@
+/* Container */
+.startup-tabs-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+  
+  /* Title */
+  .startup-tabs-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1e293b;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  /* Tabs */
+  .tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .tab-button {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    border: none;
+    border-radius: 8px;
+    background: #e5e7eb;
+    color: #1e293b;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .tab-button.active {
+    background: #4f46e5;
+    color: #ffffff;
+  }
+  
+  .tab-button:hover {
+    background: #d1d5db;
+  }
+  
+  .tab-button.active:hover {
+    background: #4338ca;
+  }
+  
+  /* Feedback States */
+  .startup-loading {
+    text-align: center;
+    font-size: 1.25rem;
+    color: #4f46e5;
+    padding: 2rem;
+  }
+  
+  .startup-error {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #ff3333;
+    background: #ffe6e6;
+    border: 1px solid #ff3333;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .startup-empty {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #64748b;
+    padding: 2rem;
+  }
+  
+  /* Grid */
+  .startup-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+  
+  /* Card */
+  .startup-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .startup-card-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 1rem;
+  }
+  
+  .startup-card-email,
+  .startup-card-status {
+    font-size: 0.95rem;
+    color: #4b5563;
+    margin: 0.5rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .startup-icon {
+    color: #4f46e5;
+  }
+  
+  /* Buttons */
+  .startup-card-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .approve-btn,
+  .reject-btn {
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+  
+  .approve-btn {
+    background: #22c55e;
+    color: #ffffff;
+  }
+  
+  .approve-btn:hover {
+    background: #16a34a;
+    transform: translateY(-2px);
+  }
+  
+  .reject-btn {
+    background: #ef4444;
+    color: #ffffff;
+  }
+  
+  .reject-btn:hover {
+    background: #dc2626;
+    transform: translateY(-2px);
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .startup-tabs-title {
+      font-size: 2rem;
+    }
+  
+    .startup-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .startup-tabs-title {
+      font-size: 1.75rem;
+    }
+  
+    .tab-button {
+      padding: 0.5rem 1rem;
+      font-size: 0.9rem;
+    }
+  
+    .startup-card-title {
+      font-size: 1.25rem;
+    }
+  
+    .startup-card-email,
+    .startup-card-status {
+      font-size: 0.85rem;
+    }
+  
+    .approve-btn,
+    .reject-btn {
+      padding: 0.5rem 0.75rem;
+      font-size: 0.8rem;
+    }
+  }

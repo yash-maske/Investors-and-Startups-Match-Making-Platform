@@ -1,0 +1,225 @@
+/* investor.css */
+/* Container */
+.investor-container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1.5rem; /* Increased padding for breathing room */
+}
+
+/* Title */
+.investor-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1e293b;
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+/* Feedback States */
+.investor-loading {
+  text-align: center;
+  font-size: 1.25rem;
+  color: #4f46e5;
+  padding: 2rem;
+}
+
+.investor-error {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #ff3333;
+  background: #ffe6e6;
+  border: 1px solid #ff3333;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+
+.investor-empty {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #64748b;
+  padding: 2rem;
+}
+
+/* Grid */
+.investor-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Slightly wider cards */
+  gap: 2rem;
+}
+
+/* Card */
+.investor-card {
+  perspective: 1000px;
+  height: 360px; /* Slightly taller for better spacing */
+}
+
+.investor-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.investor-card:hover .investor-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Front and Back Sides */
+.investor-card-front,
+.investor-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.75rem; /* More padding for alignment */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.investor-card-back {
+  transform: rotateY(180deg);
+}
+
+/* Front Side Styles */
+.investor-card-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 1rem;
+  line-height: 1.4; /* Better text alignment */
+}
+
+.investor-card-location,
+.investor-card-min-investment,
+.investor-card-max-investment {
+  font-size: 0.95rem;
+  color: #64748b;
+  margin: 0.6rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem; /* Slightly larger gap for clarity */
+}
+
+/* Back Side Styles */
+.investor-card-details-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 1rem;
+}
+
+.investor-card-email,
+.investor-card-mobile,
+.investor-card-pincode {
+  font-size: 0.95rem;
+  color: #4b5563;
+  margin: 0.6rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+/* Icons */
+.investor-icon {
+  color: #4f46e5;
+  flex-shrink: 0; /* Prevent icon compression */
+}
+
+/* Buttons */
+.investor-card-actions {
+  display: flex;
+  gap: 0.75rem; /* Tighter gap for better alignment */
+  margin-top: 1.25rem;
+  justify-content: flex-start; /* Align buttons to start */
+}
+
+.investor-contact-btn,
+.investor-bookmark-btn {
+  padding: 0.6rem 1rem; /* Slightly smaller for balance */
+  font-size: 0.9rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem; /* Tighter icon-text gap */
+}
+
+.investor-contact-btn {
+  background: #22c55e;
+  color: #ffffff;
+}
+
+.investor-contact-btn:hover {
+  background: #16a34a;
+  transform: translateY(-2px);
+}
+
+.investor-contact-btn.pitched {
+  background: #6b7280;
+  color: #ffffff;
+  cursor: not-allowed;
+}
+
+.investor-contact-btn.pitched:hover {
+  background: #6b7280;
+  transform: none;
+}
+
+.investor-bookmark-btn {
+  background: #e5e7eb;
+  color: #1e293b;
+}
+
+.investor-bookmark-btn:hover {
+  background: #d1d5db;
+  transform: translateY(-2px);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .investor-title {
+    font-size: 2rem;
+  }
+
+  .investor-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .investor-card {
+    height: 400px;
+  }
+}
+
+@media (max-width: 480px) {
+  .investor-title {
+    font-size: 1.75rem;
+  }
+
+  .investor-card-title {
+    font-size: 1.25rem;
+  }
+
+  .investor-card-location,
+  .investor-card-min-investment,
+  .investor-card-max-investment,
+  .investor-card-email,
+  .investor-card-mobile,
+  .investor-card-pincode {
+    font-size: 0.85rem;
+  }
+
+  .investor-contact-btn,
+  .investor-bookmark-btn {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.8rem;
+  }
+}

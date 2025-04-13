@@ -1,0 +1,383 @@
+/* stmeet.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.pitch-events-container {
+  max-width: 1200px; /* Reduced from 1360px */
+  margin: 3rem auto; /* Slightly smaller */
+  padding: 2rem; /* Reduced from 2.5rem */
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: linear-gradient(135deg, #f0f7ff 0%, #e0ecff 100%);
+  border-radius: 24px; /* Slightly smaller */
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Title */
+.pitch-events-title {
+  font-size: 2.8rem; /* Slightly smaller */
+  font-weight: 700;
+  color: #1a202c;
+  text-align: center;
+  margin-bottom: 3rem; /* Reduced from 3.5rem */
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.pitch-events-title::before {
+  content: '';
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 160px; /* Reduced from 180px */
+  height: 160px;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.2) 0%, transparent 70%);
+  z-index: -1;
+}
+
+/* Feedback States */
+.pitch-events-loading {
+  text-align: center;
+  font-size: 1.3rem; /* Slightly smaller */
+  color: #3b82f6;
+  padding: 2rem; /* Reduced */
+  background: #ffffff;
+  border-radius: 12px;
+  margin: 1rem 0; /* Reduced */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  animation: pulse 1.5s infinite;
+}
+
+.pitch-events-error {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #dc2626;
+  background: #fef2f2;
+  border: 2px solid #f87171;
+  border-radius: 12px;
+  padding: 1.5rem; /* Reduced */
+  margin: 1rem 0;
+  font-weight: 500;
+}
+
+.pitch-events-empty {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #6b7280;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 1rem 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+/* Grid */
+.pitch-events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Reduced from 380px */
+  gap: 1.5rem; /* Reduced from 2.5rem */
+  padding: 1rem 0; /* Reduced from 1.5rem */
+  justify-content: center; /* Center single cards */
+}
+
+/* Card */
+.pitch-event-card {
+  background: linear-gradient(145deg, #ffffff 0%, #fafbff 100%);
+  border-radius: 14px; /* Reduced from 18px */
+  padding: 1.25rem; /* Reduced from 2rem */
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1); /* Lighter shadow */
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem; /* Reduced from 1.2rem */
+  position: relative;
+  overflow: hidden;
+  max-width: 340px; /* Cap width for single entries */
+  margin: 0 auto; /* Center single cards */
+}
+
+.pitch-event-card:hover {
+  transform: translateY(-6px); /* Smaller lift */
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Card Header */
+.pitch-event-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.8rem; /* Reduced from 1.5rem */
+}
+
+.pitch-event-title {
+  font-size: 1.5rem; /* Reduced from 1.8rem */
+  font-weight: 600;
+  color: #1a202c;
+  text-transform: capitalize;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* Reduced from 0.75rem */
+}
+
+.pitch-event-status {
+  font-size: 0.85rem; /* Reduced from 1rem */
+  font-weight: 500;
+  padding: 0.3rem 0.6rem; /* Smaller */
+  border-radius: 16px; /* Reduced */
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.pitch-event-status:empty::before {
+  content: 'Upcoming';
+  background: #dbeafe;
+  color: #3b82f6;
+}
+
+/* Card Content */
+.pitch-event-description {
+  font-size: 0.95rem; /* Reduced from 1.1rem */
+  color: #4b5563;
+  line-height: 1.5;
+  max-height: 4.2rem; /* Reduced from 5.5rem */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.pitch-event-date,
+.pitch-event-emails {
+  font-size: 0.9rem; /* Reduced from 1rem */
+  color: #6b7280;
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.pitch-event-date span,
+.pitch-event-emails span {
+  font-weight: 600;
+  color: #1f2937;
+  margin-right: 0.3rem; /* Reduced */
+}
+
+/* Icons */
+.pitch-event-icon {
+  color: #3b82f6;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+  width: 18px; /* Reduced from 20px */
+  height: 18px;
+}
+
+/* Countdown Timer */
+.pitch-event-countdown {
+  margin: 0.8rem 0; /* Reduced from 1.2rem */
+  padding: 0.6rem; /* Reduced from 1rem */
+  background: #f8fafc;
+  border-radius: 8px; /* Reduced */
+}
+
+.countdown-timer {
+  display: flex;
+  gap: 0.8rem; /* Reduced from 1.2rem */
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.countdown-unit {
+  background: linear-gradient(145deg, #ffffff 0%, #e0f2fe 100%);
+  border-radius: 6px; /* Reduced */
+  padding: 0.6rem; /* Reduced from 0.85rem */
+  text-align: center;
+  min-width: 60px; /* Reduced from 80px */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease;
+}
+
+.countdown-unit:hover {
+  transform: scale(1.05);
+}
+
+.countdown-unit span:first-child {
+  display: block;
+  font-size: 1.4rem; /* Reduced from 1.8rem */
+  font-weight: 700;
+  color: #1a202c;
+}
+
+.countdown-unit span:last-child {
+  font-size: 0.75rem; /* Reduced from 0.9rem */
+  color: #6b7280;
+  text-transform: uppercase;
+}
+
+.countdown-ended {
+  text-align: center;
+  font-size: 0.95rem; /* Reduced from 1.2rem */
+  color: #dc2626;
+  background: #fef2f2;
+  border-radius: 6px;
+  padding: 0.6rem;
+  font-weight: 500;
+}
+
+/* Join Meet Button */
+.pitch-event-join-btn {
+  background: #3b82f6;
+  color: #ffffff;
+  border: none;
+  padding: 0.7rem 1.25rem; /* Reduced from 0.9rem 2rem */
+  border-radius: 24px; /* Reduced from 32px */
+  font-size: 0.95rem; /* Reduced from 1.1rem */
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  align-self: center;
+  margin-top: auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.pitch-event-join-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+  transition: left 0.5s ease;
+}
+
+.pitch-event-join-btn:hover::before {
+  left: 100%;
+}
+
+.pitch-event-join-btn:hover {
+  background: #2563eb;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.pitch-event-join-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(59, 130, 246, 0.2);
+}
+
+.pitch-event-join-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+}
+
+.pitch-event-join-btn:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Animations */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .pitch-events-container {
+    margin: 2rem auto;
+    padding: 1.5rem;
+    border-radius: 18px;
+  }
+
+  .pitch-events-title {
+    font-size: 2.2rem;
+  }
+
+  .pitch-events-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .pitch-event-card {
+    padding: 1rem;
+    max-width: 320px; /* Slightly smaller cap */
+  }
+
+  .countdown-unit {
+    min-width: 50px;
+  }
+
+  .pitch-event-title {
+    font-size: 1.3rem;
+  }
+
+  .pitch-event-description {
+    font-size: 0.9rem;
+  }
+
+  .pitch-event-date,
+  .pitch-event-emails {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .pitch-events-title {
+    font-size: 1.8rem;
+  }
+
+  .pitch-event-title {
+    font-size: 1.2rem;
+  }
+
+  .pitch-event-description {
+    font-size: 0.85rem;
+    max-height: 3.8rem;
+  }
+
+  .pitch-event-date,
+  .pitch-event-emails {
+    font-size: 0.8rem;
+  }
+
+  .countdown-unit {
+    min-width: 45px;
+    padding: 0.5rem;
+  }
+
+  .countdown-unit span:first-child {
+    font-size: 1.2rem;
+  }
+
+  .countdown-unit span:last-child {
+    font-size: 0.7rem;
+  }
+
+  .pitch-event-join-btn {
+    width: 100%;
+    padding: 0.6rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+  }
+
+  .pitch-event-icon {
+    width: 16px;
+    height: 16px;
+  }
+}

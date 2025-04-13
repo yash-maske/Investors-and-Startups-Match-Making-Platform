@@ -1,0 +1,252 @@
+/* discover.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+.discover-container {
+  max-width: 1000px; /* Increased container size for larger textarea */
+  margin: 3rem auto;
+  padding: 3rem;
+  background: #ffffff;
+  border-radius: 1.25rem;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.discover-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #1e293b;
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.discover-title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: #6e8efb;
+  margin: 0.5rem auto 0;
+  border-radius: 2px;
+}
+
+.discover-filter-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two columns for first row */
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.form-group.full-width {
+  grid-column: span 2; /* Description spans both columns */
+}
+
+.form-group label {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #1e293b;
+  transition: color 0.3s ease;
+}
+
+.form-group label:hover {
+  color: #6e8efb;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 1rem 1.25rem; /* Consistent padding for all fields */
+  font-size: 1.1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  background: #f9f9f9;
+  color: #1e293b;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #6e8efb;
+  background: #ffffff;
+  box-shadow: 0 0 10px rgba(110, 142, 251, 0.2);
+}
+
+.form-group textarea {
+  min-height: 120px; /* Initial height */
+  resize: vertical; /* Adjustable vertically by user */
+  /* Uncomment below to allow horizontal resizing too */
+  /* resize: both; */
+}
+
+.amount-range {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.amount-range input {
+  flex: 1;
+  min-width: 0;
+}
+
+.amount-range span {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.form-buttons {
+  grid-column: span 2;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.discover-submit-btn,
+.discover-reset-btn {
+  padding: 1.25rem 2.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #ffffff;
+  border: none;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 180px;
+}
+
+.discover-submit-btn {
+  background: #6e8efb;
+}
+
+.discover-submit-btn:hover {
+  background: #5a78e0;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(110, 142, 251, 0.4);
+}
+
+.discover-reset-btn {
+  background: #e74c3c;
+}
+
+.discover-reset-btn:hover {
+  background: #c0392b;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(231, 76, 60, 0.4);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .discover-filter-form {
+    grid-template-columns: 1fr;
+  }
+
+  .form-group.full-width {
+    grid-column: span 1;
+  }
+
+  .form-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .discover-submit-btn,
+  .discover-reset-btn {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .discover-container {
+    margin: 1.5rem;
+    padding: 2rem;
+  }
+
+  .discover-title {
+    font-size: 1.75rem;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 0.875rem 1rem;
+    font-size: 1rem;
+  }
+
+  .form-group label {
+    font-size: 1.1rem;
+  }
+
+  .discover-submit-btn,
+  .discover-reset-btn {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    min-width: 150px;
+  }
+
+  .amount-range {
+    gap: 0.5rem;
+  }
+
+  .form-group textarea {
+    min-height: 100px; /* Slightly smaller on mobile */
+  }
+}
+/* Loading Spinner */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px; /* Ensure it takes some space */
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #e5e7eb; /* Light gray border */
+  border-top: 5px solid #6e8efb; /* Blue top border for spinning effect */
+  border-radius: 50%;
+  animation: spin 1s linear infinite; /* Spin animation */
+}
+
+.loading-container p {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #1e293b;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

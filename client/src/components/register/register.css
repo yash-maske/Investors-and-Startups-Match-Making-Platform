@@ -1,0 +1,425 @@
+/* Main container */
+.register-container {
+  position: relative;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #4f46e5 0%, #8b5cf6 100%);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Animated background layer */
+.register-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, rgba(0, 0, 0, 0.2) 100%);
+  z-index: 0;
+  animation: pulse 15s infinite ease-in-out;
+}
+
+/* Particle animations */
+.register-background::before,
+.register-background::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  animation: float 12s infinite ease-in-out;
+}
+
+.register-background::before {
+  top: 15%;
+  left: 20%;
+  animation-delay: 0s;
+}
+
+.register-background::after {
+  top: 70%;
+  right: 25%;
+  animation-delay: 6s;
+}
+
+/* Keyframes for animations */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateY(-60px) scale(1.3);
+    opacity: 0.8;
+  }
+}
+
+/* Content wrapper */
+.register-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 90%; /* Flexible max-width */
+  padding: 1rem;
+}
+
+/* Form wrapper */
+.register-form-wrapper {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  animation: slideUp 0.5s ease-out;
+  width: 100%;
+  max-width: 28rem; /* Limits width on larger screens */
+  margin: 0 auto;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Title */
+.register-title {
+  font-size: clamp(1.5rem, 5vw, 2rem); /* Scales with viewport */
+  font-weight: 700;
+  color: #111827;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Subtitle */
+.register-subtitle {
+  font-size: clamp(0.875rem, 3vw, 1rem);
+  color: #4b5563;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+/* Form */
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* Reduced gap for smaller screens */
+}
+
+/* Field container */
+.register-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Label */
+.register-label {
+  font-size: clamp(0.75rem, 2.5vw, 0.875rem);
+  font-weight: 600;
+  color: #111827;
+}
+
+/* Input */
+.register-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: clamp(0.875rem, 2.5vw, 1rem);
+  color: #111827;
+  background: #f9fafb;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.register-input:focus {
+  outline: none;
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+  background: #ffffff;
+}
+
+.register-input::placeholder {
+  color: #9ca3af;
+}
+
+/* Password input wrapper */
+.password-input-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+/* Password input field */
+.password-input {
+  padding-right: 2.5rem; /* Space for the icon */
+}
+
+/* Password toggle icon */
+.password-toggle-icon {
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #4b5563;
+  transition: color 0.2s ease;
+}
+
+.password-toggle-icon:hover {
+  color: #4f46e5;
+}
+
+/* Ensure input focus styles work with the wrapper */
+.password-input:focus + .password-toggle-icon {
+  color: #4f46e5;
+}
+
+/* Disabled state for inputs */
+.register-input:disabled {
+  background: #e5e7eb;
+  cursor: not-allowed;
+}
+
+/* User Type Section */
+.register-user-type {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.register-user-type-label {
+  font-size: clamp(0.75rem, 2.5vw, 0.875rem);
+  font-weight: 600;
+  color: #111827;
+}
+
+/* Radio Group */
+.register-radio-group {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap; /* Allows wrapping on small screens */
+}
+
+/* Radio Label */
+.register-radio-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+/* Radio Input */
+.register-radio {
+  appearance: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 2px solid #4f46e5;
+  border-radius: 50%;
+  background: #ffffff;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.register-radio:checked::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0.625rem;
+  height: 0.625rem;
+  background: #4f46e5;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.register-radio:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+}
+
+/* Radio Text */
+.register-radio-text {
+  font-size: clamp(0.875rem, 2.5vw, 1rem);
+  color: #111827;
+  font-weight: 500;
+}
+
+/* Button */
+.register-button {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: clamp(0.875rem, 2.5vw, 1rem);
+  font-weight: 600;
+  color: #ffffff;
+  background: #4f46e5;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.register-button:hover {
+  background: #6366f1;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.register-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.register-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Footer text */
+.register-footer {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: clamp(0.75rem, 2.5vw, 0.875rem);
+  color: #4b5563;
+}
+
+/* Link */
+.register-link {
+  color: #4f46e5;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.register-link:hover {
+  color: #6366f1;
+  text-decoration: underline;
+}
+
+/* Error and Success Messages */
+.error-message,
+.success-message {
+  text-align: center;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: clamp(0.75rem, 2.5vw, 0.875rem);
+}
+
+.error-message {
+  background-color: #ffe6e6;
+  border: 1px solid #ff3333;
+  color: #ff3333;
+}
+
+.success-message {
+  background-color: #e6ffe6;
+  border: 1px solid #33cc33;
+  color: #33cc33;
+}
+
+/* Responsive Adjustments */
+
+/* Small screens (phones, < 640px) */
+@media (max-width: 639px) {
+  .register-content {
+    padding: 0.5rem;
+  }
+
+  .register-form-wrapper {
+    padding: 1.25rem;
+  }
+
+  .register-form {
+    gap: 0.75rem;
+  }
+
+  .register-radio-group {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .register-input {
+    padding: 0.5rem 0.75rem;
+  }
+
+  .register-button {
+    padding: 0.5rem 0.75rem;
+  }
+
+  .password-input {
+    padding-right: 2rem; /* Adjust for smaller icon space */
+  }
+
+  .password-toggle-icon {
+    right: 0.5rem;
+  }
+}
+
+/* Medium screens (tablets, 640px - 1023px) */
+@media (min-width: 640px) and (max-width: 1023px) {
+  .register-content {
+    padding: 1.5rem;
+  }
+
+  .register-form-wrapper {
+    padding: 2rem;
+    max-width: 32rem;
+  }
+
+  .register-radio-group {
+    gap: 2rem;
+  }
+}
+
+/* Large screens (desktops, 1024px - 1279px) */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .register-content {
+    max-width: 85%;
+  }
+
+  .register-form-wrapper {
+    padding: 2.5rem;
+    max-width: 36rem;
+  }
+}
+
+/* Extra large screens (wide desktops, 1280px+) */
+@media (min-width: 1280px) {
+  .register-content {
+    max-width: 28rem; /* Keeps form compact on very wide screens */
+  }
+
+  .register-form-wrapper {
+    padding: 2.5rem;
+  }
+}
+
+/* Adjust particle size on smaller screens */
+@media (max-width: 639px) {
+  .register-background::before,
+  .register-background::after {
+    width: 15px;
+    height: 15px;
+  }
+}

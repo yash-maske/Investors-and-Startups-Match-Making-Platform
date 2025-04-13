@@ -1,0 +1,271 @@
+/* Navbar container */
+.admin-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(135deg, #4f46e5 0%, #8b5cf6 100%);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    height: 70px;
+  }
+  
+  /* Logo */
+  .admin-navbar-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .admin-navbar-logo-icon {
+    color: #ffffff;
+    transition: transform 0.3s ease;
+  }
+  
+  .admin-navbar-logo-icon:hover {
+    transform: scale(1.2);
+  }
+  
+  .admin-navbar-logo h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Container for links and toggle */
+  .admin-navbar-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Navigation links */
+  .admin-navbar-links {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .admin-navbar-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #e5e7eb;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+  }
+  
+  .admin-navbar-link:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    transform: translateY(-2px);
+  }
+  
+  .admin-navbar-link.logout {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #f87171;
+  }
+  
+  .admin-navbar-link.logout:hover {
+    color: #ef4444;
+    background: rgba(248, 113, 113, 0.1);
+  }
+  
+  /* Hamburger toggle */
+  .admin-navbar-toggle {
+    display: none;
+    color: #ffffff;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .admin-navbar-toggle:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Logout modal */
+  .admin-logout-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  .admin-logout-modal {
+    background: #ffffff;
+    border-radius: 1rem;
+    padding: 2rem;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    animation: slideIn 0.3s ease-in-out;
+  }
+  
+  .admin-logout-modal-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 1rem;
+  }
+  
+  .admin-logout-modal-message {
+    font-size: 1rem;
+    color: #4b5563;
+    margin-bottom: 1.5rem;
+  }
+  
+  .admin-logout-modal-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .admin-logout-modal-button {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .admin-logout-modal-button.cancel {
+    background: #e5e7eb;
+    color: #111827;
+  }
+  
+  .admin-logout-modal-button.cancel:hover {
+    background: #d1d5db;
+    transform: translateY(-2px);
+  }
+  
+  .admin-logout-modal-button.confirm {
+    background: #f87171;
+    color: #ffffff;
+  }
+  
+  .admin-logout-modal-button.confirm:hover {
+    background: #ef4444;
+    transform: translateY(-2px);
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideIn {
+    from {
+      transform: translateY(-20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .admin-navbar {
+      padding: 1rem;
+    }
+  
+    .admin-navbar-logo h2 {
+      font-size: 1.25rem;
+    }
+  
+    .admin-navbar-links {
+      position: absolute;
+      top: 70px;
+      left: 0;
+      right: 0;
+      background: linear-gradient(135deg, #4f46e5 0%, #8b5cf6 100%);
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 1rem;
+      transform: translateY(-100%);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+  
+    .admin-navbar-links.active {
+      transform: translateY(0);
+      opacity: 1;
+      visibility: visible;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+  
+    .admin-navbar-link {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      font-size: 1.1rem;
+    }
+  
+    .admin-navbar-toggle {
+      display: block;
+    }
+  
+    .admin-logout-modal {
+      padding: 1.5rem;
+      width: 95%;
+    }
+  
+    .admin-logout-modal-title {
+      font-size: 1.25rem;
+    }
+  
+    .admin-logout-modal-message {
+      font-size: 0.875rem;
+    }
+  
+    .admin-logout-modal-button {
+      padding: 0.5rem 1rem;
+      font-size: 0.875rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .admin-navbar-logo-icon {
+      size: 24;
+    }
+  
+    .admin-navbar-logo h2 {
+      font-size: 1rem;
+    }
+  
+    .admin-navbar-link {
+      font-size: 1rem;
+    }
+  }

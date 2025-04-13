@@ -1,0 +1,291 @@
+/* Navbar styling */
+.navbar {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%); /* Subtle gradient */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Soft shadow */
+  padding: 1.25rem 0; /* Vertical padding only, horizontal handled by children */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo - Pinned to the leftmost edge */
+.navbar-logo {
+  position: absolute;
+  left: 1.5rem; /* Fixed padding from the left edge */
+  display: flex;
+  align-items: center;
+  gap: 0.75rem; /* Space between rocket and text */
+}
+
+.navbar-logo h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0;
+  letter-spacing: -0.025em;
+}
+
+.navbar-logo-icon {
+  color: #22c55e; /* Green to match Invest button */
+  transition: transform 0.3s ease;
+}
+
+.navbar-logo:hover .navbar-logo-icon {
+  transform: translateY(-3px); /* Rocket lift on hover */
+}
+
+/* Container for navigation links and toggle */
+.navbar-container {
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-end; /* Aligns content to the right */
+  align-items: center;
+  padding-right: 2rem; /* Right padding for balance */
+}
+
+/* Navigation Links */
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-link {
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #64748b;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  transition: color 0.3s ease, background-color 0.3s ease, transform 0.2s ease;
+}
+
+.navbar-link:hover {
+  color: #1e293b;
+  background-color: #f0f2f5;
+  transform: translateY(-2px);
+}
+
+.navbar-link.active {
+  color: #1e293b;
+  font-weight: 600;
+  background-color: #e6ffe6;
+  border-bottom: 3px solid #22c55e;
+}
+
+/* Hamburger menu toggle */
+.navbar-toggle {
+  display: none; /* Hidden on desktop */
+  cursor: pointer;
+  color: #1e293b;
+  padding: 0.25rem;
+  transition: transform 0.3s ease;
+}
+
+.navbar-toggle:hover {
+  transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1rem 0; /* Consistent vertical padding */
+  }
+
+  .navbar-logo {
+    left: 1rem; /* Slightly less padding on mobile */
+  }
+
+  .navbar-container {
+    padding-right: 1.5rem; /* Adjusted padding for mobile */
+    position: relative;
+    justify-content: flex-end;
+  }
+
+  .navbar-toggle {
+    display: block;
+  }
+
+  .navbar-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1.5rem;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    border-radius: 0 0 1rem 1rem;
+  }
+
+  .navbar-links.active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .navbar-link {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    justify-content: flex-start; /* Align left on mobile */
+    font-size: 1.15rem;
+  }
+
+  .navbar-link.active {
+    border-bottom: none;
+    background: #e6ffe6;
+    color: #1e293b;
+  }
+
+  .navbar-logo h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Larger screens adjustments */
+@media (min-width: 769px) {
+  .navbar-links {
+    display: flex;
+  }
+
+  .navbar-toggle {
+    display: none; /* Ensure toggle stays hidden on desktop */
+  }
+}
+
+/* Existing navbar styles (keep your current styles) */
+
+/* Logout Modal Styles */
+.logout-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.logout-modal {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  transform: translateY(-20px);
+  animation: slideIn 0.3s ease-in-out forwards;
+}
+
+.logout-modal-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+}
+
+.logout-modal-message {
+  font-size: 1rem;
+  color: #4a4a4a;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+.logout-modal-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.logout-modal-button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.logout-modal-button.cancel {
+  background: #e0e0e0;
+  color: #333;
+}
+
+.logout-modal-button.cancel:hover {
+  background: #d0d0d0;
+  transform: translateY(-2px);
+}
+
+.logout-modal-button.confirm {
+  background: #ff4d4f;
+  color: #ffffff;
+}
+
+.logout-modal-button.confirm:hover {
+  background: #e6393b;
+  transform: translateY(-2px);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .logout-modal {
+    width: 95%;
+    padding: 1.5rem;
+  }
+
+  .logout-modal-title {
+    font-size: 1.25rem;
+  }
+
+  .logout-modal-message {
+    font-size: 0.9rem;
+  }
+
+  .logout-modal-button {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+}

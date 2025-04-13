@@ -1,0 +1,112 @@
+[
+    {
+        "rank": 1,
+        "company": "Zepto",
+        "founded_year": 2021.0,
+        "headquarters": "Bangalore",
+        "sector": "E-commerce",
+        "description": "Ability to consistently deliver 2,500+ products in 10 minutes flat.",
+        "founder": "Aadit Palicha, Kaivalya Vohra",
+        "amount_of_investment_required": "100000000"
+    },
+    {
+        "rank": 2,
+        "company": "Zepto",
+        "founded_year": 2021.0,
+        "headquarters": "Mumbai",
+        "sector": "E-commerce",
+        "description": "Grocery delivery startup",
+        "founder": "Aadit Palicha, Kaivalya Vohra",
+        "amount_of_investment_required": "60000000"
+    },
+    {
+        "rank": 3,
+        "company": "Dunzo",
+        "founded_year": 2015.0,
+        "headquarters": "Bangalore",
+        "sector": "Delivery service",
+        "description": "Dunzo is a hyper-local delivery app that connects users to the nearest delivery partner.",
+        "founder": "Ankur Aggarwal, Dalvir Suri, Kabeer Biswas, Mukund Jha",
+        "amount_of_investment_required": "40000000"
+    },
+    {
+        "rank": 4,
+        "company": "KiranaKart",
+        "founded_year": 2020.0,
+        "headquarters": "Mumbai",
+        "sector": "E-commerce",
+        "description": "A better model for instant grocery delivery in India.",
+        "founder": "Kaivalya Vohra, Aadit Palicha",
+        "amount_of_investment_required": "720000"
+    },
+    {
+        "rank": 5,
+        "company": "Cloudphysician",
+        "founded_year": 2017.0,
+        "headquarters": "Bangalore",
+        "sector": "Hospital & Health Care",
+        "description": "Cloudphysician is a healthtech company that is transforming the delivery of critical care.",
+        "founder": "Dr Dhruv Joshi, Dr Dileep Raman",
+        "amount_of_investment_required": "4000000"
+    },
+    {
+        "rank": 6,
+        "company": "Paperfly",
+        "founded_year": 2016.0,
+        "headquarters": "Bangalore",
+        "sector": "E-commerce",
+        "description": "Paperfly is an e-commerce fulfillment and nationwide delivery solution in Bangladesh",
+        "founder": "Shahriar Hasan, Md Razibul Islam, Rahath Ahmed, Shamsuddin Ahmed",
+        "amount_of_investment_required": "11000000"
+    },
+    {
+        "rank": 7,
+        "company": "Get My Parking",
+        "founded_year": 2015.0,
+        "headquarters": "New Delhi",
+        "sector": "Mobility",
+        "description": "Get My Parking, is a B2B Platform-as-a-Service company.",
+        "founder": "Chirag Jain, Rasik Pansare",
+        "amount_of_investment_required": "6000000"
+    },
+    {
+        "rank": 8,
+        "company": "Pitstop",
+        "founded_year": 2015.0,
+        "headquarters": "Bangalore",
+        "sector": "Automotive",
+        "description": "Pitstop offers general repair and maintenance services for cars through its doorstep service vehicles.",
+        "founder": "Mihir Mohan Mishra, Nirant Ramakuru, Ruchi Deepak",
+        "amount_of_investment_required": "3500000"
+    },
+    {
+        "rank": 9,
+        "company": "ANSR",
+        "founded_year": 2008.0,
+        "headquarters": "Bangalore",
+        "sector": "Consulting",
+        "description": "ANSR Consulting is providing end-to-end services for companies, setting up captive service centers.",
+        "founder": "Lalit Ahuja",
+        "amount_of_investment_required": "15000000"
+    },
+    {
+        "rank": 10,
+        "company": "Pepperfry",
+        "founded_year": 2011.0,
+        "headquarters": "Mumbai",
+        "sector": "E-commerce",
+        "description": "Pepperfry is an online home and lifestyle shopping store selling products with cash on delivery facilities.",
+        "founder": "Ambareesh Murty, Ashish Shah",
+        "amount_of_investment_required": "30000000"
+    },
+    {
+        "rank": 11,
+        "company": "Flipspaces",
+        "founded_year": 2011.0,
+        "headquarters": "Mumbai",
+        "sector": "Design",
+        "description": "Flipspaces is a global tech-enabled venture towards discovery, design and delivery of commercial and residential spaces",
+        "founder": "Kunal Sharma",
+        "amount_of_investment_required": "2000000"
+    }
+]
